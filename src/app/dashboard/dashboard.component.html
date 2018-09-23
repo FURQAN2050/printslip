@@ -1,0 +1,72 @@
+
+
+ <div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron"  style="text-align: center; background-color: #34495e;">
+            <h1 class="deepshd"> The Denim Factory </h1>
+     </div>
+    </div>
+  </div> 
+
+<div class="container">
+  
+  
+<div class="row">
+  <div class="col-md-12">
+      <input type="file" name="files"  #uploads  (change)="onChange(uploads.files)" multiple value="process"/>
+      <br>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+     
+    <button class="btn btn-primary " (click)="printall(dataList)">print All</button>
+    <br>
+      <table class="table table-bordered">
+          <thead class="thead-white">
+            <tr>
+              <th scope="col">#</th>
+              <!-- <th scope="col">id</th> -->
+              <th scope="col">Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Phone #</th>
+              <th scope="col">Email</th>
+              <th scope="col">City</th>
+              <th scope="col">Pieces</th>
+              <th scope="col">Weight</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Fragile</th>
+              <th scope="col">Detail</th>
+              <th scope="col">Remarks</th>
+              <th scope="col">Print</th>
+  
+            </tr>
+          </thead>
+          <tbody *ngFor="let record of dataList let i = index">
+              
+            <tr >
+                  <th scope="row">{{i+1}}</th>
+                  <!-- <td> {{record.id}} </td> -->
+                  <td> {{record.name}} </td>
+                  <td>{{record.address}}</td>
+                  <td>{{record.number}}</td>
+                  <td>{{record.conEmail}}</td>
+                  <td>{{record.city}}</td>
+                  <td>{{record.pieces}}</td>
+                  <td>{{record.weight}}</td>
+                  <td>{{record.amount}}</td>
+                  <td>{{record.fragile}}</td>
+                  <td>{{record.detail}}</td>
+                  <td>{{record.remarks}}</td>
+                  <td><button class="btn btn-primary" (click)="printSlip(record)">print slip</button></td>
+            </tr>
+           
+          </tbody>
+        
+        </table>
+  
+
+  </div>
+
+</div>
+    </div>
