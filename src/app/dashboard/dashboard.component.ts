@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit {
                  heights:[10],
                  body: [
                    //headers
-             [ {image: this.placeHolderImage,alignment: 'left',width:140,height: 50,rowSpan:3,colSpan:2},'',{image: this.denimbarcode,alignment: 'center',width:50,height: 50,rowSpan:3,{text:'Date',bold:true},myDate,{text:'Time',bold:true},myTime],
+             [ {image: this.placeHolderImage,alignment: 'left',width:140,height: 50,rowSpan:3,colSpan:2},'',{image: this.denimbarcode,alignment: 'center',width:50,height: 50,rowSpan:3},{text:'Date',bold:true},myDate,{text:'Time',bold:true},myTime],
                   ['1', '2', '3',{text:'Service',bold:true},{text:record.service,bold:true},'',''],
                   ['1', '2', '3',{text:'Origin',bold:true},'KARACHI',{text:'Destination',bold:true},''],
                  [{text: 'Shipper : The Denim Factory',colSpan:2, alignment: 'left',bold:true ,fontSize:10},  '', {text: 'Email : info@thedenimfactory.com',colSpan:2, alignment: 'left',bold:true ,fontSize:9},'',{text: 'Consignee', alignment: 'center'},{text: record.name, alignment: 'left',colSpan:2},''],
@@ -139,7 +139,7 @@ export class DashboardComponent implements OnInit {
           heights:[10],
           body: [
             //headers
-      [ {image: this.placeHolderImage,alignment: 'left',width:140,height: 50,rowSpan:3,colSpan:2},'',{image: this.denimbarcode,alignment: 'center',width:50,height: 50,rowSpan:3,{text:'Date',bold:true},myDate,{text:'Time',bold:true},myTime],
+      [ {image: this.placeHolderImage,alignment: 'left',width:140,height: 50,rowSpan:3,colSpan:2},'',{image: this.denimbarcode,alignment: 'center',width:50,height: 50,rowSpan:3},{text:'Date',bold:true},myDate,{text:'Time',bold:true},myTime],
            ['1', '2', '3',{text:'Service',bold:true},{text:record.service,bold:true},'',''],
            ['1', '2', '3',{text:'Origin',bold:true},'KARACHI',{text:'Destination',bold:true},''],
           [{text: 'Shipper : The Denim Factory',colSpan:2, alignment: 'left',bold:true ,fontSize:10},  '', {text: 'Email : info@thedenimfactory.com',colSpan:2, alignment: 'left',bold:true ,fontSize:9},'',{text: 'Consignee', alignment: 'center'},{text: record.name, alignment: 'left',colSpan:2},''],
