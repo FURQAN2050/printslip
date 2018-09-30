@@ -25,8 +25,8 @@
       <table class="table table-bordered">
           <thead class="thead-white">
             <tr>
-              <th scope="col">#</th>
-              <!-- <th scope="col">id</th> -->
+              <th scope="col">id</th>
+              <th scope="col">Ref#</th>
               <th scope="col">Name</th>
               <th scope="col">Address</th>
               <th scope="col">Phone #</th>
@@ -38,35 +38,47 @@
               <th scope="col">Fragile</th>
               <th scope="col">Detail</th>
               <th scope="col">Remarks</th>
+              <th scope="col">Service</th>
               <th scope="col">Print</th>
   
             </tr>
           </thead>
-          <tbody *ngFor="let record of dataList let i = index">
+          <tbody *ngFor="let record of dataList  | paginate: { itemsPerPage: 10, currentPage: p} let i = index ">
               
             <tr >
-                  <th scope="row">{{i+1}}</th>
-                  <!-- <td> {{record.id}} </td> -->
+                  <th scope="row">{{record.id}}</th>
+                  <td> {{record.refno}} </td>
                   <td> {{record.name}} </td>
                   <td>{{record.address}}</td>
                   <td>{{record.number}}</td>
                   <td>{{record.conEmail}}</td>
-                  <!-- <td>{{record.city}}</td> -->
                   <td>{{record.pieces}}</td>
                   <td>{{record.weight}}</td>
                   <td>{{record.amount}}</td>
                   <td>{{record.fragile}}</td>
                   <td>{{record.detail}}</td>
                   <td>{{record.remarks}}</td>
+                  <td>{{record.service}}</td>
                   <td><button class="btn btn-primary" (click)="printSlip(record)">print slip</button></td>
             </tr>
-           
           </tbody>
+         
         
         </table>
+         <pagination-controls style="float:center" (pageChange)="p=$event"></pagination-controls>
   
 
   </div>
 
 </div>
     </div>
+    <!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3"> Powered By  scorpleo solution © 2018 Copyright:
+    <!-- <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDB-ootstrap.com</a> -->
+  </div>
+  <!-- Copyright -->
+
+</footer>
