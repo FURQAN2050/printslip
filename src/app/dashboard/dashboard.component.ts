@@ -55,13 +55,15 @@ export class DashboardComponent implements OnInit {
                  heights:[10],
                  body: [
                    //headers
-                 [ {image: this.placeHolderImage,alignment: 'left',width:140,height: 50,rowSpan:3,colSpan:2},'',{image: this.denimbarcode,alignment: 'center',width:50,height: 50,rowSpan:3},{text:'Date',bold:true},myDate,{text:'Time',bold:true},myTime],
-                  ['1', '2', '3',{text:'Service',bold:true},{text:record.service,bold:true},'',''],
-                  ['1', '2', '3',{text:'Origin',bold:true},'KARACHI',{text:'Destination',bold:true},{text:'KARACHI',bold:true}],
+                 [ {image: this.placeHolderImage,alignment: 'left',width:140,height: 50,rowSpan:3,colSpan:2},'',{image: this.denimbarcode,alignment: 'center',width:80,height: 50,rowSpan:3},{text:'Date',bold:true},myDate,{text:'Time',bold:true},myTime],
+                  ['1', '2', '3',{text:'Service',bold:true},{text:record.service},{text:record.service1},{text:record.service2}],
+                  ['1', '2', '3',{text:'Origin',bold:true},'KARACHI',{text:'Destination'},{text:'KARACHI',bold:true}],
                    [{text: 'Shipper : The Denim Factory',colSpan:2, alignment: 'left',bold:true ,fontSize:10},  '', {text: 'Email : info@thedenimfactory.com',colSpan:2, alignment: 'left',bold:true ,fontSize:9},'',{text: 'Consignee', alignment: 'center'},{text: record.name, alignment: 'left',colSpan:2},''],
-                  [{text: '\n \n \n' ,rowSpan:3,colSpan:4, alignment: 'left'}, '2', '3','4',{text: record.address ,rowSpan:3,colSpan:3, alignment: 'left'},'',''], 
+                  [{text: '\n \n \n \n' ,rowSpan:5,colSpan:4, alignment: 'left'}, '2', '3','4',{text: record.address ,rowSpan:3,colSpan:3, alignment: 'left'},'',''], 
                   ['1', '2','3','4','5','6','7'],
                   ['1', '2','3','4','5','6','7'],
+                  ['1', '2','3','4',{text:'Consignee Phone: '+record.number,colSpan:3 ,bold:true,alignment:'left',fontSize:9},'6','7'],
+                  ['1', '2','3','4',{text:'Consignee Email: '+record.email,colSpan:3 ,bold:true,alignment:'left',fontSize:9},'6','7'],
                   [{text: 'Pieces', alignment: 'center' ,bold:true}, record.pieces, {text: 'Weight', alignment: 'center' ,bold:true},record.weight,{text: 'Fragile', alignment: 'center' ,bold:true},record.fragile,''],
                   [{text: 'Declared insurance value',colSpan:3, alignment: 'center',bold:true}, '2', '3',{text: record.insurance, alignment: 'center'},{text: 'Amount', alignment: 'left',bold:true},{text: 'Rs:'+record.amount,colSpan:2, alignment: 'left',bold:true},'7'],
                   [{text: 'Product detail',colSpan:2, alignment: 'left',bold:true}, '2', {text: record.detail,colSpan:5, alignment: 'left'},'4','5','6','7'],
@@ -121,28 +123,30 @@ export class DashboardComponent implements OnInit {
       //    text:"Customer Slip"
       // },
       {
-     alignment:'center',
-        table: {  
-          widths: [65, 65, 65,65,65,65,65],
-          heights:[10],
-          body: [
-            //headers
-          [ {image: this.placeHolderImage,alignment: 'left',width:140,height: 50,rowSpan:3,colSpan:2},'',{image: this.denimbarcode,alignment: 'center',width:50,height: 50,rowSpan:3},{text:'Date',bold:true},myDate,{text:'Time',bold:true},myTime],
-           ['1', '2', '3',{text:'Service',bold:true},{text:record.service,bold:true},'',''],
-           ['1', '2', '3',{text:'Origin',bold:true},'KARACHI',{text:'Destination',bold:true},{text:'KARACHI',bold:true}],
-            [{text: 'Shipper : The Denim Factory',colSpan:2, alignment: 'left',bold:true ,fontSize:10},  '', {text: 'Email : info@thedenimfactory.com',colSpan:2, alignment: 'left',bold:true ,fontSize:9},'',{text: 'Consignee', alignment: 'center'},{text: record.name, alignment: 'left',colSpan:2},''],
-           [{text: '\n \n \n' ,rowSpan:3,colSpan:4, alignment: 'left'}, '2', '3','4',{text: record.address ,rowSpan:3,colSpan:3, alignment: 'left'},'',''], 
-           ['1', '2','3','4','5','6','7'],
-           ['1', '2','3','4','5','6','7'],
-           [{text: 'Pieces', alignment: 'center' ,bold:true}, record.pieces, {text: 'Weight', alignment: 'center' ,bold:true},record.weight,{text: 'Fragile', alignment: 'center' ,bold:true},record.fragile,''],
-           [{text: 'Declared insurance value',colSpan:3, alignment: 'center',bold:true}, '2', '3',{text: record.insurance, alignment: 'center'},{text: 'Amount', alignment: 'left',bold:true},{text: 'Rs:'+record.amount,colSpan:2, alignment: 'left',bold:true},'7'],
-           [{text: 'Product detail',colSpan:2, alignment: 'left',bold:true}, '2', {text: record.detail,colSpan:5, alignment: 'left'},'4','5','6','7'],
-           [{text: 'Remarks',colSpan:2, alignment: 'left' ,bold:true}, '2', {text: record.remarks,colSpan:5, alignment: 'left'},'4','5','6','7'],
-           [{text: 'Customer Ref.#',colSpan:2, alignment: 'left',bold:true}, '2',{text: record.refno,colSpan:5, alignment: 'left',bold:true},'4','5','6','7'],
-           [{text: ' Please Donot Accept ,if shipment is not intact.Before Paying the Cod, shipment can not be open',bold:true,colSpan:7,fontSize:10, alignment: 'center'}, '2','3','4','5','6','7'],
-          ]
-        }
-      },{
+        alignment:'center',
+           table: {  
+             widths: [65, 65, 65,65,65,65,65],
+             heights:[10],
+             body: [
+               //headers
+             [ {image: this.placeHolderImage,alignment: 'left',width:140,height: 50,rowSpan:3,colSpan:2},'',{image: this.denimbarcode,alignment: 'center',width:80,height: 50,rowSpan:3},{text:'Date',bold:true},myDate,{text:'Time',bold:true},myTime],
+              ['1', '2', '3',{text:'Service',bold:true},{text:record.service},{text:record.service1},{text:record.service2}],
+              ['1', '2', '3',{text:'Origin',bold:true},'KARACHI',{text:'Destination'},{text:'KARACHI',bold:true}],
+               [{text: 'Shipper : The Denim Factory',colSpan:2, alignment: 'left',bold:true ,fontSize:10},  '', {text: 'Email : info@thedenimfactory.com',colSpan:2, alignment: 'left',bold:true ,fontSize:9},'',{text: 'Consignee', alignment: 'center'},{text: record.name, alignment: 'left',colSpan:2},''],
+              [{text: '\n \n \n \n' ,rowSpan:5,colSpan:4, alignment: 'left'}, '2', '3','4',{text: record.address ,rowSpan:3,colSpan:3, alignment: 'left'},'',''], 
+              ['1', '2','3','4','5','6','7'],
+              ['1', '2','3','4','5','6','7'],
+              ['1', '2','3','4',{text:'Consignee Phone: '+record.number,colSpan:3 ,bold:true,alignment:'left',fontSize:9},'6','7'],
+              ['1', '2','3','4',{text:'Consignee Email: '+record.email,colSpan:3 ,bold:true,alignment:'left',fontSize:9},'6','7'],
+              [{text: 'Pieces', alignment: 'center' ,bold:true}, record.pieces, {text: 'Weight', alignment: 'center' ,bold:true},record.weight,{text: 'Fragile', alignment: 'center' ,bold:true},record.fragile,''],
+              [{text: 'Declared insurance value',colSpan:3, alignment: 'center',bold:true}, '2', '3',{text: record.insurance, alignment: 'center'},{text: 'Amount', alignment: 'left',bold:true},{text: 'Rs:'+record.amount,colSpan:2, alignment: 'left',bold:true},'7'],
+              [{text: 'Product detail',colSpan:2, alignment: 'left',bold:true}, '2', {text: record.detail,colSpan:5, alignment: 'left'},'4','5','6','7'],
+              [{text: 'Remarks',colSpan:2, alignment: 'left' ,bold:true}, '2', {text: record.remarks,colSpan:5, alignment: 'left'},'4','5','6','7'],
+              [{text: 'Customer Ref.#',colSpan:2, alignment: 'left',bold:true}, '2',{text: record.refno,colSpan:5, alignment: 'left',bold:true},'4','5','6','7'],
+              [{text: ' Please Donot Accept ,if shipment is not intact.Before Paying the Cod, shipment can not be open',bold:true,colSpan:7,fontSize:10, alignment: 'center'}, '2','3','4','5','6','7'],
+             ]
+           }
+         },{
         text:'\n \n \n \n \n \n \n \n \n \n'
       }
   

@@ -43,7 +43,7 @@
   
             </tr>
           </thead>
-          <tbody *ngFor="let record of dataList  | paginate: { itemsPerPage: 10, currentPage: p} let i = index ">
+          <tbody *ngFor="let record of dataList  | paginate: { itemsPerPage: 10, currentPage: p } ">
               
             <tr >
                   <th scope="row">{{record.id}}</th>
@@ -51,7 +51,7 @@
                   <td> {{record.name}} </td>
                   <td>{{record.address}}</td>
                   <td>{{record.number}}</td>
-                  <td>{{record.conEmail}}</td>
+                  <td>{{record.email}}</td>
                   <td>{{record.pieces}}</td>
                   <td>{{record.weight}}</td>
                   <td>{{record.amount}}</td>
@@ -65,7 +65,7 @@
          
         
         </table>
-         <pagination-controls style="float:center" (pageChange)="p=$event"></pagination-controls>
+         <pagination-controls style="float:center" (pageChange)="p =$event"></pagination-controls>
   
 
   </div>
